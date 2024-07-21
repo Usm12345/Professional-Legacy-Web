@@ -1,0 +1,73 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static "css/registerglobals.css"  %}" />
+    <link rel="stylesheet" href="{% static "css/registerstyle.css" %}" />
+  </head>
+  <body>
+    {% block content %}
+    <div class="register">
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <div class="overlap-group">
+            <p class="text-wrapper">Nice to Meet you !!!</p>
+            <p class="div">Become a Part of Us</p>
+            <img class="image" src="{% static "img/image-31352.png" %}" />
+          </div>
+          <img class="img" src="{% static "img/image-31333-1.png" %}" />
+          <div class="text-wrapper-2">PROFESSIONAL’S LEGACY</div>
+          <div class="text-wrapper-3">Register</div>
+          <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+          <div class="overlap-2">
+            <div class="text-wrapper-4">Enter your Email Address</div>
+            <div class="Username_container" >
+              <input type="text" placeholder="Username" name="Email" id="Email" style="position: absolute;width: 302px;height: 32px;top: 0px;left: 3px;background-color: #d9d9d9;border-radius: 28px;border: none;padding: 8px;">
+               
+            </div>
+          </div>
+          <p class="p">Register your account and Become a part of our Team</p>
+          <div class="text-wrapper-5">OR</div>
+          <div class="overlap-3">
+            <div class="text-wrapper-4">Enter your Password</div>
+            <div class="Password1_container">
+            <input type="text" placeholder="Password"  name="Password1" id="Password1" style="position: absolute;width: 302px;height: 32px;top: 0px;left: 3px;background-color: #d9d9d9;border-radius: 28px;border: none;padding: 8px;">
+            </div>
+          </div>
+          <div class="overlap-4">
+            <div class="text-wrapper-4">Confirm Password</div>
+            <div class="Password2_container">
+            <input type="text" placeholder="Confirm Password" name="Password2" id="Password2" style="position: absolute;width: 302px;height: 32px;top: 0px;left: 3px;background-color: #d9d9d9;border-radius: 28px;border: none;padding: 8px;">
+
+            </div>
+          </div>
+          
+          <button class="component">
+             <div class="div-wrapper">
+               <div class="text-wrapper-6">Register</div>
+             </div>
+          </button>
+          <div class="overlap-group-wrapper">
+            <div class="overlap-5">
+              <button class="rectangle-2">
+                <a href="{% provider_login_url 'google' %}">
+                  <img class="google" src="{% static  "img/google.png" %}" />
+                  <div class="text-wrapper-7">Continue with Google</div>
+                </a>
+              </button>
+            </div>
+          </div>
+          <img class="line" src="{% static  "img/line-5.svg" %}" />
+          <div class="text-wrapper-8" style=" position: absolute; width: 292px;top: 623px;left: 72px;; font-family:Work Sans, Helvetica;font-weight: 400;color: #918c8c;font-size: 17px;letter-spacing: 0;line-height: normal;">Already have an Account??  <a href="/login/">Login</a></div>
+        
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+{% endblock %}
